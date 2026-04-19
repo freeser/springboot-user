@@ -1,0 +1,18 @@
+# 自定义 OpenAPI 描述文档的 JSON 格式访问路径，默认为 /v3/api-docs
+api-docs:
+  path: /api-docs
+  # 是否启用 api-docs 端点，默认为 true。设置为 false 可禁用。
+  enabled: true
+
+# 自定义 Swagger UI 页面的访问路径，默认为 /swagger-ui/index.html
+swagger-ui:
+  path: /swagger-ui.html
+  # 对 API 路径进行排序，可选值：alpha (按字母排序), method (按 HTTP 方法排序)
+  operations-sorter: method
+
+# 自动扫描并生成文档的包路径，多个包用逗号分隔
+packages-to-scan: com.fyfe.controller, com.fyfe.api
+# 需要生成文档的路径匹配规则
+paths-to-match: /api/**, /user/**
+# 需要排除在文档之外的路径
+paths-to-exclude: /admin/**
