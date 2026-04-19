@@ -2,6 +2,7 @@ package com.fyfe.config;
 
 import com.fyfe.Interceptor.MyInterceptor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -37,4 +38,25 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
 //    public void addViewControllers(ViewControllerRegistry registry) {
 //        registry.addViewController("/index").setViewName("index");
 //    }
+
+    /**
+     * 全局CORS配置
+     * @param registry
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/user/*");   // 映射服务器中那些http接口运行跨域访问
+        //.allowedOrigins("http://localhost:8082")     // 配置哪些来源有权限跨域
+        //.allowedMethods("GET","POST","DELETE","PUT");   // 配置运行跨域访问的请求方法
+
+
+        /*
+        标准配置
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowCredentials(true)
+                .allowedHeaders("*")
+                .allowedMethods("GET", "POST", "DELETE", "PUT","PATCH");
+        */
+    }
 }
