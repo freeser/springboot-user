@@ -85,7 +85,7 @@ import org.springframework.context.annotation.Configuration;
                 description = "This is a sample Spring Boot RESTful service using springdoc-openapi.",
                 contact = @Contact(
                         name = "API Support",
-                        email = "support@fyfe.com"
+                        email = "freeser@126.com"
                 ),
                 license = @License(name = "Apache 2.0", url = "https://www.apache.org/licenses/LICENSE-2.0")
         )

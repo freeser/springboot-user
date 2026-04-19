@@ -3,7 +3,11 @@ package com.fyfe.config;
 import com.fyfe.Interceptor.MyInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 public class MyWebMvcConfigurer implements WebMvcConfigurer {
@@ -16,14 +20,21 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
 
         /*
         * 排除多个路径
-        * List list = new ArrayList();
-        list.add("/user/toIndex");
-        list.add("/user/loginUser");
-        list.add("/user/toRegister");
-        list.add("/user/register");
-        registry.addInterceptor(new UserIntercetor()).addPathPatterns("/**").excludePathPatterns(list);
-        *
         * */
-
+//        List<String> list = new ArrayList<>();
+//        list.add("/user/helloworld");
+//        list.add("/index");
+//        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns(list);
     }
+
+    /**
+     * 添加视图控制器
+     * 立即访问
+     * <mvc:view-controller path="/" view-name="index" />
+     * @param registry
+     */
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController("/index").setViewName("index");
+//    }
 }
