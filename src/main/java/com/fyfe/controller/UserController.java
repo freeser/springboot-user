@@ -53,6 +53,11 @@ public class UserController {
         return  Result.buildSuccess(user, "查询成功");
     }
 
+    @GetMapping("helloworld")
+    public Result helloWorld() {
+        return  Result.buildSuccess(null, "查询成功");
+    }
+
     // 新增 /user/add
     // RequestBody表示只能接收JSON数据，否则接收表单数据
     @PostMapping("/add")
